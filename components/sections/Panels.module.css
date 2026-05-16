@@ -1,0 +1,453 @@
+.experience {
+  scroll-snap-type: y mandatory;
+}
+
+.panel {
+  position: relative;
+  min-height: 100svh;
+  overflow: clip;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.mediaLayer,
+.mediaAsset {
+  position: absolute;
+  inset: 0;
+}
+
+.mediaAsset {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.06);
+}
+
+.heroMedia {
+  filter: saturate(0.92) contrast(1.03);
+}
+
+.quarryMedia {
+  background:
+    linear-gradient(115deg, rgba(5, 10, 18, 0.2), rgba(5, 10, 18, 0.72)),
+    url("/assets/images/company/quarry-excavator.jpeg") center/cover no-repeat;
+}
+
+.loaderMedia {
+  background:
+    linear-gradient(115deg, rgba(5, 10, 18, 0.22), rgba(5, 10, 18, 0.74)),
+    url("/assets/images/company/quarry-loader.png") center/cover no-repeat;
+}
+
+.productsMedia {
+  background:
+    radial-gradient(circle at 24% 24%, rgba(234, 109, 28, 0.24), transparent 30%),
+    linear-gradient(135deg, rgba(9, 17, 29, 0.68), rgba(9, 17, 29, 0.88)),
+    url("/assets/images/company/partnership-handshake.jpeg") center/cover no-repeat;
+}
+
+.mapMedia {
+  background:
+    linear-gradient(135deg, rgba(9, 17, 29, 0.52), rgba(9, 17, 29, 0.84)),
+    url("/assets/images/company/quarry-excavator.jpeg") center/cover no-repeat;
+}
+
+.contactMedia {
+  background:
+    linear-gradient(135deg, rgba(9, 17, 29, 0.35), rgba(9, 17, 29, 0.92)),
+    url("/assets/images/company/partnership-handshake.jpeg") center/cover no-repeat;
+}
+
+.heroVeil,
+.storyVeil,
+.productsVeil,
+.reachVeil,
+.contactVeil {
+  position: absolute;
+  inset: 0;
+}
+
+.heroVeil {
+  background:
+    radial-gradient(circle at 72% 22%, rgba(234, 109, 28, 0.2), transparent 28%),
+    linear-gradient(90deg, rgba(4, 9, 16, 0.82) 14%, rgba(4, 9, 16, 0.46) 48%, rgba(4, 9, 16, 0.18) 100%);
+}
+
+.storyVeil {
+  background: linear-gradient(100deg, rgba(4, 9, 16, 0.36) 20%, rgba(4, 9, 16, 0.76) 58%, rgba(4, 9, 16, 0.9) 100%);
+}
+
+.productsVeil {
+  background: linear-gradient(180deg, rgba(4, 9, 16, 0.3), rgba(4, 9, 16, 0.85));
+}
+
+.reachVeil {
+  background: linear-gradient(95deg, rgba(4, 9, 16, 0.78) 16%, rgba(4, 9, 16, 0.34) 52%, rgba(4, 9, 16, 0.9) 100%);
+}
+
+.contactVeil {
+  background: linear-gradient(180deg, rgba(4, 9, 16, 0.44), rgba(4, 9, 16, 0.86));
+}
+
+.panelInner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  min-height: 100svh;
+  align-items: center;
+  padding: 7.5rem 0 3rem;
+}
+
+.contentCard {
+  width: min(100%, 52rem);
+  padding: 2.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-xl);
+  background: linear-gradient(180deg, rgba(9, 17, 29, 0.74), rgba(9, 17, 29, 0.54));
+  backdrop-filter: blur(16px);
+  box-shadow: var(--shadow-panel);
+}
+
+.heroCard {
+  padding: 3rem;
+}
+
+.storyCard {
+  margin-left: auto;
+}
+
+.productsCard,
+.reachCard,
+.contactCard {
+  width: 100%;
+}
+
+.panelTitle {
+  display: flex;
+  flex-direction: column;
+  gap: 0.05em;
+}
+
+.compactTitle {
+  font-size: clamp(2.6rem, 5vw, 5.1rem);
+}
+
+.ctaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.8rem;
+}
+
+.highlightList {
+  display: grid;
+  gap: 0.8rem;
+  margin: 2rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.highlightList li,
+.detailLine {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.75;
+}
+
+.highlightList li::before {
+  content: "";
+  display: inline-block;
+  width: 0.55rem;
+  height: 0.55rem;
+  margin-right: 0.75rem;
+  border-radius: 999px;
+  background: var(--color-orange-500);
+  vertical-align: middle;
+}
+
+.detailStack {
+  display: grid;
+  gap: 0.95rem;
+  margin-top: 1.5rem;
+}
+
+.factGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.7rem;
+}
+
+.factCard {
+  padding: 1.15rem;
+  border-radius: var(--radius-md);
+}
+
+.factCard strong {
+  display: block;
+  font-family: var(--font-heading), sans-serif;
+  font-size: 1.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.factCard span {
+  display: block;
+  margin-top: 0.45rem;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.6;
+}
+
+.pillRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+}
+
+.featurePill,
+.countryChip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.8rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 0.92rem;
+}
+
+.productsHeader {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 2rem;
+  align-items: end;
+}
+
+.productsText {
+  display: grid;
+  gap: 1rem;
+}
+
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.productCard {
+  overflow: hidden;
+  border-radius: 1.6rem;
+}
+
+.productImageWrap {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.04));
+}
+
+.productImage {
+  object-fit: contain;
+  padding: 1rem;
+  transition: transform 300ms ease;
+}
+
+.productCard:hover .productImage {
+  transform: scale(1.08);
+}
+
+.productBody {
+  padding: 1.2rem;
+}
+
+.productBody h3 {
+  margin: 0;
+  font-family: var(--font-heading), sans-serif;
+  font-size: 1.4rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.productBody p,
+.productBody span,
+.productBody li {
+  color: rgba(255, 255, 255, 0.74);
+  line-height: 1.7;
+}
+
+.productBody span {
+  display: block;
+  margin-top: 0.75rem;
+  color: var(--color-orange-500);
+}
+
+.productBody ul {
+  margin: 0.9rem 0 0;
+  padding-left: 1rem;
+}
+
+.reachCard {
+  display: grid;
+  grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
+  gap: 1.5rem;
+}
+
+.reachCopy {
+  display: grid;
+  align-content: start;
+}
+
+.countryGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+}
+
+.mapCard {
+  padding: 1rem;
+  border-radius: var(--radius-lg);
+}
+
+.mapFrame {
+  position: relative;
+  min-height: 24rem;
+  border-radius: calc(var(--radius-lg) - 0.35rem);
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 40%, rgba(234, 109, 28, 0.16), transparent 30%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+}
+
+.mapImage {
+  object-fit: contain;
+  padding: 1.5rem;
+}
+
+.partnerLoop {
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+.partnerRail {
+  display: flex;
+  gap: 0.9rem;
+  width: max-content;
+  animation: partnerLoop 24s linear infinite;
+}
+
+.partnerBadge {
+  position: relative;
+  flex: 0 0 8.8rem;
+  height: 4.2rem;
+  padding: 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.partnerBadge :global(img) {
+  object-fit: contain;
+  padding: 0.65rem;
+}
+
+.contactCard {
+  display: grid;
+  gap: 1.8rem;
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.contactItem {
+  display: flex;
+  gap: 0.85rem;
+  padding: 1.15rem;
+  border-radius: var(--radius-md);
+}
+
+.contactItem strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-family: var(--font-heading), sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.contactItem span {
+  color: rgba(255, 255, 255, 0.74);
+  line-height: 1.65;
+}
+
+@keyframes partnerLoop {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - 0.45rem));
+  }
+}
+
+@media (max-width: 1100px) {
+  .factGrid,
+  .productGrid,
+  .reachCard,
+  .productsHeader,
+  .contactGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .productGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 860px) {
+  .experience {
+    scroll-snap-type: y proximity;
+  }
+
+  .panelInner {
+    padding-top: 6.8rem;
+  }
+
+  .contentCard,
+  .heroCard {
+    padding: 1.45rem;
+  }
+
+  .storyCard {
+    margin-left: 0;
+  }
+
+  .productsHeader,
+  .reachCard,
+  .factGrid,
+  .contactGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .panelInner {
+    align-items: flex-end;
+    padding-bottom: 1.25rem;
+  }
+
+  .contentCard {
+    border-radius: 1.5rem;
+  }
+
+  .productGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .panelTitle {
+    gap: 0.12em;
+  }
+}

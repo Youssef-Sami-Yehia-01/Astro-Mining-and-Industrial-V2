@@ -1,0 +1,14 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+}
+
+.image {
+  width: auto;
+  height: auto;
+  max-width: clamp(5.8rem, 8vw, 7.6rem);
+}
+
+.footerImage {
+  max-width: clamp(5rem, 7vw, 6.2rem);
+}
