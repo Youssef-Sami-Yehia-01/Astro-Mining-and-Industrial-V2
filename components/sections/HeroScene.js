@@ -4,18 +4,9 @@ import { motion } from "framer-motion";
 import ButtonLink from "@/components/shared/ButtonLink";
 import styles from "@/components/sections/Panels.module.css";
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 34 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.75, ease: [0.22, 1, 0.36, 1] }
-  }
-};
-
-export default function HeroPanel({ panel }) {
+export default function HeroScene({ isActive, panel }) {
   return (
-    <section className={styles.panel} id={panel.id}>
+    <article className={`${styles.scene} ${isActive ? styles.sceneActive : ""}`} data-scene={panel.id}>
       <div className={styles.mediaLayer}>
         <video
           autoPlay
@@ -28,13 +19,12 @@ export default function HeroPanel({ panel }) {
         </video>
         <div className={styles.heroVeil} />
       </div>
-      <div className={`container ${styles.panelInner}`}>
+      <div className={`container ${styles.sceneInner}`}>
         <motion.div
+          animate={isActive ? "visible" : "hidden"}
           className={`${styles.contentCard} ${styles.heroCard}`}
           initial="hidden"
-          viewport={{ once: true, amount: 0.35 }}
-          whileInView="visible"
-          variants={fadeUp}
+          variants={sceneMotion}
         >
           <span className="eyebrow">{panel.eyebrow}</span>
           <h1 className={`${styles.panelTitle} section-title`}>
@@ -56,6 +46,21 @@ export default function HeroPanel({ panel }) {
           </ul>
         </motion.div>
       </div>
-    </section>
+    </article>
   );
 }
+
+const sceneMotion = {
+  hidden: {
+    opacity: 0,
+    y: 36
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.7,
+      ease: [0.22, 1, 0.36, 1]
+    }
+  }
+};

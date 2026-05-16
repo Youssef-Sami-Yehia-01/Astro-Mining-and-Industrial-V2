@@ -4,9 +4,9 @@ Fresh V2 concept for Astro Mining & Industrial built as a separate Next.js proje
 
 ## Concept
 
-- Cinematic homepage with full-screen scroll panels
+- Cinematic homepage with a single sticky full-screen stage
 - Media-first storytelling using Astro video, quarry imagery, product visuals, and map assets
-- Motion-driven transitions that change the visible scene as the user scrolls
+- Motion-driven scene swaps where scrolling fades one fullscreen story state into the next
 - Same Astro brand content and data, but a distinct visual direction from V1
 
 ## Stack
@@ -37,7 +37,7 @@ Fresh V2 concept for Astro Mining & Industrial built as a separate Next.js proje
 
 - V2 is intentionally isolated in its own repo and workspace.
 - The page is designed to feel more cinematic and immersive than V1.
-- Scroll behavior uses full-screen panel changes instead of a traditional long marketing page.
+- Scroll behavior uses one pinned viewport with scene transitions instead of a traditional long marketing page.
 
 ## Scripts
 

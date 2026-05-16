@@ -6,29 +6,19 @@ import Icon from "@/components/shared/Icon";
 import { contactDetails } from "@/data/siteContent";
 import styles from "@/components/sections/Panels.module.css";
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 34 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.72, ease: [0.22, 1, 0.36, 1] }
-  }
-};
-
-export default function ContactPanel({ panel }) {
+export default function ContactScene({ isActive, panel }) {
   return (
-    <section className={styles.panel} id={panel.id}>
+    <article className={`${styles.scene} ${isActive ? styles.sceneActive : ""}`} data-scene={panel.id}>
       <div className={styles.mediaLayer}>
         <div className={`${styles.mediaAsset} ${styles[panel.mediaClass]}`} />
         <div className={styles.contactVeil} />
       </div>
-      <div className={`container ${styles.panelInner}`}>
+      <div className={`container ${styles.sceneInner}`}>
         <motion.div
+          animate={isActive ? "visible" : "hidden"}
           className={`${styles.contentCard} ${styles.contactCard}`}
           initial="hidden"
-          viewport={{ once: true, amount: 0.35 }}
-          whileInView="visible"
-          variants={fadeUp}
+          variants={sceneMotion}
         >
           <div>
             <span className="eyebrow">{panel.eyebrow}</span>
@@ -74,6 +64,21 @@ export default function ContactPanel({ panel }) {
           </div>
         </motion.div>
       </div>
-    </section>
+    </article>
   );
 }
+
+const sceneMotion = {
+  hidden: {
+    opacity: 0,
+    y: 36
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.7,
+      ease: [0.22, 1, 0.36, 1]
+    }
+  }
+};

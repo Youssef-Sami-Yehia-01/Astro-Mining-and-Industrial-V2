@@ -15,10 +15,10 @@
   --color-orange-700: #9a410d;
   --shadow-soft: 0 20px 60px rgba(5, 11, 20, 0.18);
   --shadow-panel: 0 25px 80px rgba(6, 12, 22, 0.24);
-  --radius-xl: 36px;
-  --radius-lg: 28px;
-  --radius-md: 20px;
-  --radius-sm: 14px;
+  --radius-xl: 0px;
+  --radius-lg: 0px;
+  --radius-md: 0px;
+  --radius-sm: 0px;
   --container: 1320px;
   --transition: 260ms ease;
 }
