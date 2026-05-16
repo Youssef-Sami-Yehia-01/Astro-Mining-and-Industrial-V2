@@ -10,7 +10,7 @@ export default function SiteHeader({ navigation }) {
 
   return (
     <header className={styles.header}>
-      <div className={clsx("container", styles.row)}>
+      <div className={styles.row}>
         <Logo />
         <button
           aria-expanded={isOpen}
